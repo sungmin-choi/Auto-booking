@@ -7,22 +7,28 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
-import pause
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
 import pyperclip
 
+
 # 아이디와 패스워드를 여기에 입력
-ID = "xxxx"
-PW = "xxxx"
+ID = "namja306"
+PW = "csm0306"
 URL = "https://booking.naver.com/booking/6/bizes/230889"
 
 now = datetime.now()
 options = Options()
 options.headless = False
 
+def set_chrome_driver():
+    chrome_options = webdriver.ChromeOptions()
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    return driver
+
 # executable_path 부분에 브라우저 드라이버 파일 경로를 입력
-driver = webdriver.Chrome(
-    executable_path='C:/Users/thsxo/OneDrive/utility/chromedriver.exe',
-    options=options)
+driver = set_chrome_driver()
 wait = WebDriverWait(driver, 10)
 driver.get(URL)
 # time.sleep(5)
@@ -31,23 +37,25 @@ driver.get(URL)
 # 아이디 창과 패스워드 입력 창을 찾아서 클릭할 수 있을때까지 기다린 다음 자동으로 입력을 합니다
 
 
+
 def login():
 
     loginBtn = wait.until(
         EC.element_to_be_clickable((By.CLASS_NAME, "gnb_btn_login"))).click()
 
     id_box = wait.until(EC.element_to_be_clickable((By.ID, "id")))
-    pw_box = driver.find_element_by_id("pw")
+    pw_box = driver.find_element("id","pw")
 
     id_box.click()
     pyperclip.copy(ID)
-    ActionChains(driver).key_down(Keys.CONTROL).send_keys('v').key_up(
-        Keys.CONTROL).perform()
+    print(pyperclip.paste())
+    ActionChains(driver).key_down(Keys.COMMAND).send_keys('v').key_up(
+        Keys.COMMAND).perform()
 
     pw_box.click()
     pyperclip.copy(PW)
-    ActionChains(driver).key_down(Keys.CONTROL).send_keys('v').key_up(
-        Keys.CONTROL).perform()
+    ActionChains(driver).key_down(Keys.COMMAND).send_keys('v').key_up(
+        Keys.COMMAND).perform()
 
     login = wait.until(EC.element_to_be_clickable(
         (By.ID, "log.login"))).click()
@@ -59,7 +67,6 @@ def wait_booking():
     booking_btn = 0
 
     while True:
-
         try:
             print("try")
             more_info = wait.until(
@@ -174,3 +181,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
