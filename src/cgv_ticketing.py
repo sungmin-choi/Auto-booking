@@ -12,7 +12,7 @@ import pyperclip
 
 # 아이디와 패스워드를 여기에 입력
 ID = "xxxx"
-PW = "xxxx"
+PW = "xxx"
 URL = ("http://www.cgv.co.kr/")
 
 now = datetime.now()
