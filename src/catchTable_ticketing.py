@@ -14,7 +14,7 @@ import pyperclip
 
 # 아이디와 패스워드를 여기에 입력
 ID = "namja306@naver.com"
-PW = "sungmin0306!"
+PW = "XXXXX"
 LOGINURL = "https://app.catchtable.co.kr/ct/login"
 URL = "https://app.catchtable.co.kr/ct/shop/sushidawn"
 # 월 은 숫자뒤에 '월' 자도 부텨주세요 예) 11월, 12월, 1월 
