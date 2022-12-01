@@ -1,0 +1,18 @@
+[94138:259:1201/222345.641317:ERROR:chrome_browser_main.cc(1062)] The use of Rosetta to run the x64 version of Chromium on Arm is neither tested nor maintained, and unexpected behavior will likely result. Please check that all tools that spawn Chromium are Arm-native.
+[94138:259:1201/222348.699050:ERROR:system_network_context_manager.cc(742)] Cannot use V8 Proxy resolver in single process mode.
+[94138:259:1201/222348.711714:ERROR:system_network_context_manager.cc(742)] Cannot use V8 Proxy resolver in single process mode.
+[94138:259:1201/222348.734747:ERROR:system_network_context_manager.cc(742)] Cannot use V8 Proxy resolver in single process mode.
+[94138:259:1201/222404.237476:WARNING:CONSOLE(1)] "Unrecognized feature: '
+'.", source: chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js (1)
+[94138:259:1201/222406.113874:INFO:CONSOLE(27)] "Uncaught TypeError: Cannot set properties of undefined (setting 'inject')", source: https://app.catchtable.co.kr/ct/shop/sushidawn (27)
+[94138:259:1201/222409.176035:INFO:CONSOLE(1)] "%c
+   ____      _       _       _____     _     _      
+  / ___|__ _| |_ ___| |__   |_   _|_ _| |__ | | ___ 
+ | |   / _` | __/ __| '_ \    | |/ _` | '_ \| |/ _ \
+ | |__| (_| | || (__| | | |   | | (_| | |_) | |  __/
+  \____\__,_|\__\___|_| |_|   |_|\__,_|_.__/|_|\___|
+                                                    
+Powered by WAD color: #FF3D00;", source: https://dau2wmhjxkxtx.cloudfront.net/static/appjs/20221130230426/3277_4284153b.js (1)
+[94138:259:1201/222409.177730:INFO:CONSOLE(1)] "Apply > https://catchtable.notion.site/catchtable/CATCH-THE-CHANCE-CATCH-THE-FUTURE-fde8cba23f7843eabb5e91f42c948aa8?NaPm=ct%3Dl00oh6zc%7Cci%3D0zK0003Jbvrw5aIYcLoY%7Ctr%3Dsa%7Chk%3D29196049fc31f2861d5c82ef26267afdbc47080f", source: https://dau2wmhjxkxtx.cloudfront.net/static/appjs/20221130230426/3277_4284153b.js (1)
+[94138:259:1201/222409.178006:INFO:CONSOLE(1)] "Using version: 20221130230426", source: https://dau2wmhjxkxtx.cloudfront.net/static/appjs/20221130230426/3277_4284153b.js (1)
+[94138:259:1201/222448.296678:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.

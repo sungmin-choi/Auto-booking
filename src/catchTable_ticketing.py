@@ -9,7 +9,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-
+import config
 import pyperclip
 
 # 아이디와 패스워드를 여기에 입력
@@ -31,6 +31,7 @@ options.headless = False
 def set_chrome_driver():
     chrome_options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    # driver = config.WebDriver().driver_instance
     return driver
 
 # executable_path 부분에 브라우저 드라이버 파일 경로를 입력
@@ -128,7 +129,7 @@ def wait_booking(booking_date1,booking_date2):
                 booking_date2.click()
                 flag = 0
             time.sleep(0.3)
-            timetable_list = driver.find_elements(By.CLASS_NAME,'timetable-list-item')
+            timetable_list = driver.find_elements(By.CLASS_NAME,'time')
             print(len(timetable_list))
         except:
             time.sleep(0.2)
@@ -136,8 +137,17 @@ def wait_booking(booking_date1,booking_date2):
         if timetable_list!=0:
             break
     if len(timetable_list) > 0:
-        button = timetable_list[0]
-        driver.execute_script("arguments[0].click();", timetable_list[0])
+        for item in timetable_list :
+            if item.is_displayed() :
+                ActionChains(driver).move_to_element(item).click().perform()
+                break
+    
+
+        # time.sleep(1)
+        # # print('button Text:',button.text)
+        # ActionChains(driver).move_to_element(button).click()
+        
+
     
 
 
