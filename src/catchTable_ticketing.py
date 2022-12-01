@@ -130,7 +130,7 @@ def wait_booking(booking_date1,booking_date2):
                 flag = 0
             time.sleep(0.3)
             timetable_list = driver.find_elements(By.CLASS_NAME,'time')
-            print(len(timetable_list))
+            print('timerable_list:',len(timetable_list))
         except:
             time.sleep(0.2)
 
